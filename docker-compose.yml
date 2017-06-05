@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+    sonar-scanner:
+        build: ./sonar-scanner
+        container_name: sonar-scanner
+        volumes:
+            - ./abc_service:/root/src
+        networks:
+            - sonarqube-external-network
+        environment:
+            - TZ=UTC
+
+networks:
+    sonarqube-external-network:
+        external: true
