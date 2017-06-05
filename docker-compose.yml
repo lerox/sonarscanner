@@ -5,6 +5,7 @@ services:
         build: ./sonar-scanner
         container_name: sonar-scanner
         volumes:
+            # put your own project path here
             - ./abc_service:/root/src
         networks:
             - sonarqube-external-network
